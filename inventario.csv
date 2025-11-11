@@ -1,8 +1,0 @@
-equipo_instrumento,marca_fabricante,modelo,nro_serie,objeto_uso,cantidad,estado,clasificacion_riesgo,mantenimiento_calibracion,fecha_adquisicion,informacion_adicional
-"Detector de superficie de iones","FLUKE Biomedical","451B-DE-SI-RYR","3248","Para el monitoreo de áreas para garantizar la seguridad de los trabajadores por radiación. Mide tasa de dosis de radiación y dosis acumulada de diversas fuentes de radiación (alfa, beta, gamma, rayos X).",1,"En funcionamiento-¿certificado de calibración vencido?","N/A","Calibrado 2019-01-21 fuente patron Cs137, vencimiento 2020-01-20 ¿calibración vencida?","2019","Unidad portátil que funciona con batería. Posee un tiempo de respuesta rápido a la radiación de fuga, haces de dispersión y pinholes."
-"Fantomas para control de calidad de Linacs y bomba de Co60","Propio","N/A","N/A","Mediciones de dosis y dosimétricas de control de calidad estándares",1,"En funcionamiento","N/A","N/A","N/A","20 placas de acrílico de 30cm x 30cm de 10 mm de espesor cada una."
-"Fantoma de mamografía","Marca XYZ","Modelo 1","12345","Para pruebas de mamografía",1,"En funcionamiento","Bajo","N/A","N/A","Sin datos"
-"Detector Geiger-Mueller","Marca ABC","Modelo 2","67890","Detector de radiación",1,"En funcionamiento","Bajo","N/A","N/A","Preguntar"
-"Fantoma de cámara Gamma","Marca DEF","Modelo 3","24680","Control de calidad",1,"En funcionamiento","Bajo","N/A","N/A","2016"
-"Fuentes radiactivas patrones","Marca GHI","Modelo 4","13579","Patrones de referencia",1,"En funcionamiento","Bajo","N/A","N/A","2012"
-"Fantoma Columna","Marca JKL","Modelo 5","24681","Control de calidad",1,"En funcionamiento","Bajo","N/A","N/A","Sin datos"
