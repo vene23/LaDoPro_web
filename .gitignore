@@ -1,6 +1,19 @@
-# Ignorar archivo .env
-.env
+# Entorno virtual
+venv/
 
-# Ignorar migraciones o archivos innecesarios (opcional)
-*.pyc
+# Archivos temporales de Python
 __pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Archivos del entorno local
+.env
+*.csv
+
+# Archivos estáticos recolectados
+/staticfiles/
+
+# Archivos del editor
+.vscode/
+.idea/
