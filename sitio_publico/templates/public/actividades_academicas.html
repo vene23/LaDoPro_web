@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_class %}actividades-academicas{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/actividades_academicas.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="actividades">
+    <h2>Actividades de Docencia, Investigación y Desarrollo</h2>
+    <div class="contenedor">
+    <aside class="menu-anios">
+    <ul>
+        <li data-anio="Proyectos" class="activo">Proyectos</li>
+        <li data-anio="Trabajosp">Trabajos Presentados</li>
+        <li data-anio="Formacionrrhh">Formación RRHH</li>
+        <li data-anio="Capacitacion">Capacitación</li>
+        <li data-anio="Divulgacion">Divulgación</li>
+    </ul>
+    </aside>
+
+    <div class="contenido-anio">
+    <div class="anio" id="anio-Proyectos">
+        <div class="tarjeta">
+        <h3>Investigación</h3>
+        <button class="ver-mas" data-modal="modal1">Ver más</button>
+        </div>
+        <div class="tarjeta">
+        <h3>Extensión</h3>
+        <button class="ver-mas" data-modal="modal2">Ver más</button>
+        </div>
+        <div class="tarjeta">
+        <h3>Otros</h3>
+        <button class="ver-mas" data-modal="modal3">Ver más</button>
+        </div>
+    </div>
+    <div class="anio" id="anio-Trabajosp">
+        <div class="tarjeta">
+        <h3>Publicaciones</h3>
+        <button class="ver-mas" data-modal="modal4">Ver más</button>
+        </div>
+        <div class="tarjeta">
+        <h3>Congresos</h3>
+        <button class="ver-mas" data-modal="modal5">Ver más</button>
+        </div>
+    </div>
+    <div class="anio" id="anio-Formacionrrhh">
+        <div class="tarjeta">
+        <h3>Becas formativas</h3>
+        <button class="ver-mas" data-modal="modal6">Ver más</button>
+        </div>
+        <div class="tarjeta">
+        <h3>Tesinas</h3>
+        <button class="ver-mas" data-modal="modal7">Ver más</button>
+        </div>
+    </div>
+    <div class="anio" id="anio-Capacitacion">
+        <div class="tarjeta">
+        <h3>Cursos</h3>
+        <button class="ver-mas" data-modal="modal8">Ver más</button>
+        </div>
+        <div class="tarjeta">
+        <h3>Talleres</h3>
+        <button class="ver-mas" data-modal="modal9">Ver más</button>
+        </div>
+    </div>        
+    <div class="anio" id="anio-Divulgacion">
+        <div class="tarjeta">
+        <h3>Día de la Física Médica</h3>
+        <button class="ver-mas" data-modal="modal10">Ver más</button>
+        </div>
+        <div class="tarjeta">
+        <h3>Festival de Ciencias</h3>
+        <button class="ver-mas" data-modal="modal11">Ver más</button>
+        </div>
+    </div>
+    <!-- Más años se agregan igual -->
+    </div>
+</div>
+</section>
+
+<!-- Modales -->
+<div class="modal" id="modal1">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>Proyecto de investigación</h3>
+    <div class="bloque-info">    
+        <strong>● Seguridad y Protección radiológica en la utilización de radiación ionizante</strong>
+        <p>Proyecto Promocional de Investigación y Desarrollo (PPID-11/X1020), consolidación de líneas de I+D en el ámbito de la Facultad de Cs Exactas, UNLP. Directora: Laura Damonte</p>
+    </div>
+    </div>
+</div>
+
+<div class="modal" id="modal2">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>Extensión</h3>
+    <div class="bloque-info">    
+        <strong>● Radiaciones ionizantes, Seguridad y Protección Radiológica, Control de calidad de equipamiento médico que utiliza radiaciones ionizantes</strong>
+        <p>Proyecto de extensión acreditado sin financiación. Directora: Laura Damonte. Co-directora: Agustina Corti. Facultad de Ciencias Exactas, UNLP, 2023</p>
+        <strong>● Capacitación y asesoramiento en seguridad y protección radiológica a hospitales públicos</strong>
+        <p>Directora: Laura Damonte. Co-directora: Agustina Corti. Facultad de Ciencias Exactas, UNLP, 2023</p>
+    </div>
+    </div>
+</div>
+
+<div class="modal" id="modal3">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>Otros</h3>
+    <div class="bloque-info">
+        <strong>● Capacitación y Asesoramiento en Seguridad y Protección Radiológica. Control de calidad de equipamiento médico que utiliza radiaciones ionizantes</strong>
+        <p>Facultad de Ciencias. Exactas, Facultad de Odontología. Instituciones participantes: servicio de Diagnóstico por Imágenes, Hospital Interzonal General de Agudos Profesor Dr. Rodolfo Rossi; salas Calle 600 y 117, Villa Elvira; Calle 36 entre 150 y 151, Barrio Malvinas, La Plata.</p>
+        <strong>● Enhancing Capacity Building of Medical Physicists to Improve Quality and Safety in Medical Practices-(Proyecto Regional RLA 6091 del OIEA )</strong>
+        <p>Incorporación del LaDoPro al proyecto regional RLA 6091 del OIEA, en las áreas de fluoroscopia y mamografía. Un proyecto de colaboración internacional tiene diferentes objetivos entre los que se destaca establecer Niveles de Referencia para Diagnóstico en procedimientos médicos.
+        <a href=" https://www.iaea.org/projects/tc/rla6091#:~:text=To%20improve%20the%20quality%20and%20safety%20in%20diagnostic,reducing%20potential%20risks%20of%20adverse%20effects%20of%20radiation." target="_blank" class="boton-info">👉 Más información</a>    
+        </p>
+        <strong>● Recuperación de fuente radiactiva huérfana</strong>
+        <p>En septiembre del 2024 se detectó y recuperó una fuente radiactiva huérfana en la Ciudad de La Plata. </p>
+    </div>
+    </div>
+</div>
+
+<div class="modal" id="modal4">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>Publicaciones</h3>
+    <div class="bloque-info">
+        <strong>● Física Médica, donde la ciencia y la salud se encuentran</strong>
+        <p>Malena Taube, Agustina Corti, Laura C.Damonte, Revista Núcleos, UNNOBA, ISSN: 2408-4492, 2024.</p>
+        <strong>● Protección Radiológica en Fluoroscopia: el aporte esencial de la Física Médica.</strong>
+        <p>Malena Taube, Agustina Corti, Revista Núcleos, UNNOBA, ISSN: 2408-4492, 2024</p>
+    </div>
+    </div>
+</div>
+
+<div class="modal" id="modal5">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>Congresos</h3>
+    <div class="bloque-info">
+        <h3>14° Congreso Argentino de Física Médica, S.C. de Bariloche, Octubre 2024</h3>
+        <strong>● Control de Calidad en Mamografía – Sencillo y Automatizado – ATIA del IAEA</strong>
+        <p>Curso pre-congreso, 14º Congreso Argentino de Física Médica: Se gestionaron fantomas CRP para el LaDoPro y las distintas instituciones de nuestra región con las que trabajamos.</p>
+        <strong>● Innovación en blindaje contra radiaciones: Explorando el potencial de residuos de acería</strong>
+        <p>M.N.Menendez, M.V.Gallegos, M.A.Corti, L.C.Damonte. Premio al mejor póster.</p>
+        <strong>● Dosimetría Interna en tratamiento de hipertiroidismo con 131I-NaI: Evaluación de la actividad cuantificada mediante simulaciones computacionales</strong>
+        <P>V.M. Calandrón, H. L. Illanes, C. Y. Chain. Presentación Oral con exposición.</P>
+        <strong>● Cuantificación de Actividad a partir de imágenes planares de 131I: Un estudio Simind Monte Carlo</strong>
+        <p>M. J. Vitaller, V.M. Calandrón, H. L. Illanes, C. Y. Chain. Presentación Póster</p>
+        <strong>● Radioterapia metabólica en Argentina: resultado de una encuesta 2021.</strong>
+        <p>V.M. Calandrón, H. L. Illanes, C. Y. Chain, V. Sanz, M.A. Corti, P. Cedola. Presentación Oral con exposición.</p>
+        <h3>Congreso ALASBIMN/ XXIII Congreso AABYMN, 2023</h3>
+        <strong>● Evaluación de las potenciales fuentes de error en la dosimetría de tratamientos de hipertiroidismo con 131i- NaiI: Una aproximación mediante simulaciones computacionales.</strong>
+        <p>V.M. Calandrón, C.Y. Chain, H.L. Illanes, S. Vecchioli, Póster con exposición.</p>
+        <h3>108° Reunión anual de física (RAFA), 19 al 22 de Septiembre de 2023, Bahía Blanca.</h3>
+        <strong>● Control de Calidad en mamografía de un Hospital público de la Ciudad de La Plata.</strong>
+        <p>Aman Enzo, Vecchioli Santiago, Taube Malena, Lopez Rodrigo, Andisco Daniel, Corti Agustina. Póster</p>
+        <h3>SIMPOSIO INTERNACIONAL</h3>
+        <strong>● Capacitación continua en seguridad y Protección Radiológica en equipamiento odontológico.</strong>
+        <p>Tercer Simposio Internacional sobre Educación, Capacitación, Difusión y Gestión del Conocimiento Nuclear. Santiago. Galiana,L., Aman E.,López, R., Corti, M.A. y Damonte, L.C.</p>
+        <strong>● Asesoramiento en Radioprotección al Hospital Público</strong>
+        <p>Tercer Simposio Internacional sobre Educación, Capacitación, Difusión y Gestión del Conocimiento Nuclear. Calandrón V., Menéndez M., Cédola P., Montero E., Corti, M., Damonte</p>
+        <strong>Educación continua en Protección Radiológica</strong>
+        <p>Tercer Simposio Internacional sobre Educación, Capacitación, Difusión y Gestión del Conocimiento Nuclear. Montero, E., Corti, A., Puntigliano D. y Damonte, L.C</p>
+        <h3>I Jornada de Tecnología y Salud, Instituto Tecnológico de Buenos Aires (ITBA), 5 de Abril 2024.</h3>
+        <strong>● Laboratorio de Dosimetría y Protección Radiológica en la Universidad Nacional de La Plata</strong>
+        <p>M. Taube, M. N. Menendez, V. M Calandrón, L. C. Damonte, M. A. Corti. Presentación Póster</p>
+        <strong>● Formación práctica de futuros Físicos Médicos en Controles de Calidad en Radiodiagnóstico</strong>
+        <p>M. Taube, D. Andico, M. A. Corti. Presentación Póster</p>
+        <strong>● Potenciales fuentes de error en la dosimetría de tratamientos de hipertiroidismo con 131I- NaI: Aproximación mediante simulaciones computacionales</strong>
+        <p>V.M. Calandrón, C.Y. Chain, H.L. Illanes. Presentación Póster</p>
+        <h3>Jornadas</h3>
+        <strong>● Charla:  Controles de calidad en Radiodiagnóstico</strong>
+        <p>1er Jornada de Física Médica. Fac. de Ciencias Exactas – UNLP 25 de abril de 2024. Disertante: Agustina Corti</p>
+        <strong>● Mesa debate: Presente y Futuro de la Física Medica en Argentina: L.C.Damonte</strong>
+        <p>Segundas Jornadas de Medicina Nuclear, Radioterapia y Oncología de la Patagonia Austral, Centro de Medicina Nuclear de la Patagonia Austral (CEMNPA), 17 y 18 de octubre de 2019</p>
+        <h3>106a Reunión de la Asociación Física Argentina, Octubre 2021.</h3>
+        <strong>● Evaluación de materiales utilizados como blindaje de radiaciones ionizantes</strong>
+        <p>Calandrón V M, Cédola P C, Damonte L C. 106a Reunión de la Asociación Física Argentina, Octubre 2021.</p>    
+    </div>
+    </div>
+</div>
+
+<div class="modal" id="modal6">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>Becas formativas</h3>
+    <div class="bloque-info">
+        <strong>En 2021 se obtuvieron dos Becas formativas de la Facultad de Ciencias Exactas</strong>
+        <p>Formación en insvestigación de alumnos de grado. Renovadas para el 2024.</p>
+    </div>
+    </div>
+</div>
+
+<div class="modal" id="modal7">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>Tesinas</h3>
+    <div class="bloque-info">
+        <strong>Utilización de metales recuperados de acería como nuevos materiales de blindaje para Radiaciones Ionizantes. Ma. del Carmen Menendez</strong>
+        <p>Directora: Prof. Dra Ma.Agustina Corti, co-directora: Ma.Victoria Gallegos. Se graduó el 31 de mayo de 2024.</p>
+        <strong>Modelo computacional de una cámara gamma como simulador de imágenes cuantitativas de 131I para aplicación en dosimetría interna en tratamientos de hipertiroidismo. Venecia Calandrón</strong>
+        <p>Director: Prof. Dr. Luis H. Illanes, co-directora: Prof.Dra. Cecilia Y. Chain. prevista para marzo de 2025</p>
+    </div>
+    </div>
+</div>
+
+<div class="modal" id="modal8">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>Curso</h3>
+    <div class="bloque-info">
+        <strong>Curso de actualización en protección radiológica para técnicos en medicina nuclear</strong>
+        <p>Se organizó como curso de actualización profesional para técnicos, aprobado por HCD, en diciembre de 2023, que fue validado por la Autoridad Regulatoria Nuclear en noviembre 2024.</p>
+        <strong>Capacitación de alumnos y Docentes </strong>
+        <p>Capacitación en conocimientos básicos de protección radiológica para la realización de prácticas/laboratorios de materias de nuestra facultad.</p>
+    </div>
+    </div>
+</div>
+
+<div class="modal" id="modal9">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>Talleres</h3>
+    <div class="bloque-info">
+        <strong>Curso de Protección Radiológica-LaDoPro 2025</strong>
+        <p>3a Reunión Conjunta AFA-SUF / 110a Reunión de la AFA, llevada a cabo del 15 al 18 de Septiembre de 2025 en la ciudad de La Plata, Argentina.</p>
+    </div>
+    </div>
+</div>
+
+<div class="modal" id="modal10">
+    <div class="modal-contenido">
+    <span class="cerrar">&times;</span>
+    <h3>Día Internacional del Físico Médico</h3>
+
+        <div class="fila-dia-fisico-grid">
+        <div class="columna-imagen">
+            <img src="{% static 'image/fisico_medico.jpg' %}" alt="Día Internacional del Físico Médico">
+        </div>
+        <div class="columna-texto">
+            <p>Desde el año 2013 la International Organization for Medical Physics (IOMP) ha instituido el 7 de noviembre como el Día Internacional de la Física Médica, coincidente con la conmemoración del nacimiento de Marie Sklodowska Curie.</p>
+            <p><strong>Este 2025 el tema central propuesto por la IOMP es:</strong> “Física médica y tecnologías emergentes: conformando la próxima década”</p>
+        </div>
+        </div> <!-- cierre correcto de fila-dia-fisico -->
+
+        <div class="collage-dia-fisico">
+            <strong>Día del Físico Médico en imágenes</strong>
+            <div class="carrusel">
+                <button class="carrusel-btn prev">&#10094;></button>
+                <div class="carrusel-ventana">   
+                    <div class="carrusel-imagenes">
+                        <p><strong>2025</strong></p>
+                        <img src="{% static 'image/fismed2025.jpg' %}" alt="Actividad 2024">
+                        <img src="{% static 'image/imagen1.jpg' %}" alt="Actividad 2024">
+                        <img src="{% static 'image/fisico_medico_2024.jpg' %}" alt="Actividad 2024">
+                        <img src="{% static 'image/imagen3.jpg' %}" alt="Actividad 2024">
+                        <img src="{% static 'image/imagen4.jpg' %}" alt="Actividad 2024">
+                        <img src="{% static 'image/imagen5.jpg' %}" alt="Actividad 2024">
+                        <img src="{% static 'image/imagen6.jpg' %}" alt="Actividad 2024">
+                        <img src="{% static 'image/imagen7.jpg' %}" alt="Actividad 2024">
+                        <img src="{% static 'image/imagen8.jpg' %}" alt="Actividad 2024">
+                    </div>
+                </div>
+                <button class="carrusel-btn next">&#10095;</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal11">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h3>Festival de ciencias</h3>
+        <div class="bloque-info">
+            <strong>Día de la óptica. </strong>
+            <p>Stand sobre Radiactividad y la carrera Lic. en Física Médica. Fac. de Cs. Exactas, UNLP y CIOP, 16/5/2024.</p>
+            <strong>Festival Federal de la Ciencia: Elijo crecer</strong>
+            <p>Stand sobre Radiactividad y la carrera Lic. en Física Médica, Plaza Malvinas 6/4/24 y Paseo del Bosque, 8/24
+            <a href=" https://iiia.conicet.gov.ar/elijo-crecer-festival-federal-en-defensa-de-la-ciencia-argentina/" target="_blank" class="boton-info">👉 Más información</a>    
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const carruseles = [];
+
+  // Inicializar carruseles
+document.querySelectorAll('.carrusel').forEach(carrusel => {
+    const ventana = carrusel.querySelector('.carrusel-ventana');
+    const imagenes = carrusel.querySelector('.carrusel-imagenes');
+    const imgs = imagenes.querySelectorAll('img');
+    let index = 0;
+
+    function actualizarCarrusel() {
+        const ancho = ventana.clientWidth;
+        imagenes.style.width = `${ancho * imgs.length}px`;
+        imagenes.style.transform = `translateX(-${index * ancho}px)`;
+        imgs.forEach(img => {
+            img.style.width = `${ancho}px`;
+            img.style.flex = `0 0 ${ancho}px`;
+        });
+    }
+
+    carruseles.push({ el: carrusel, actualizar: actualizarCarrusel });
+
+    carrusel.querySelector('.next').addEventListener('click', () => {
+        if (index < imgs.length - 1) {
+            index++;
+            actualizarCarrusel();
+        }
+    });
+
+    carrusel.querySelector('.prev').addEventListener('click', () => {
+        if (index > 0) {
+            index--;
+            actualizarCarrusel();
+        }
+    });
+
+    window.addEventListener('resize', actualizarCarrusel);
+
+    let cargadas = 0;
+    imgs.forEach(img => {
+        img.onload = () => {
+            cargadas++;
+            if (cargadas === imgs.length) {
+                actualizarCarrusel();
+            }
+        };
+    });
+});
+
+  // Activar año seleccionado
+document.querySelectorAll('.menu-anios li').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelectorAll('.menu-anios li').forEach(li => li.classList.remove('activo'));
+        item.classList.add('activo');
+
+        const anio = item.getAttribute('data-anio');
+        document.querySelectorAll('.anio').forEach(div => div.classList.remove('activo'));
+        document.getElementById('anio-' + anio).classList.add('activo');
+    });
+});
+
+  // Abrir modal y actualizar carrusel si lo tiene
+document.querySelectorAll('.ver-mas').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const modalId = btn.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+
+                // Primero, cierra todos los modales
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.style.display = 'none';
+        });
+
+            // Abrir el nuevo modal seleccionado
+        modal.style.display = 'block';
+
+        // Actualizar el carrusel dentro del modal si tiene
+        requestAnimationFrame(() => {
+            carruseles.forEach(({ el, actualizar }) => {
+                if (modal.contains(el)) {
+                    actualizar();
+                }
+            });
+        });
+    });
+});
+
+  // Cerrar modal con X
+    document.querySelectorAll('.cerrar').forEach(span => {
+        span.addEventListener('click', () => {
+            span.closest('.modal').style.display = 'none';
+        });
+    });
+
+  // Cerrar modal al hacer clic fuera
+    window.addEventListener('click', (e) => {
+        document.querySelectorAll('.modal').forEach(modal => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
+{% endblock %}

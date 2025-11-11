@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Detalles del Producto</h1>
+        <table class="table">
+            <tr>
+                <th>Nombre:</th>
+                <td>{{ producto.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Marca:</th>
+                <td>{{ producto.marca }}</td>
+            </tr>
+            <tr>
+                <th>Modelo:</th>
+                <td>{{ producto.modelo }}</td>
+            </tr>
+            <tr>
+                <th>Número de serie:</th>
+                <td>{{ producto.numero_serie }}</td>
+            </tr>
+            <tr>
+                <th>Objetivo uso:</th>
+                <td>{{ producto.objetivo_uso }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad:</th>
+                <td>{{ producto.cantidad }}</td>
+            </tr>
+            <tr>
+                <th>Estado:</th>
+                <td>{{ producto.estado }}</td>
+            </tr>
+            <tr>
+                <th>Clasificación riesgo:</th>
+                <td>{{ producto.clasificacion_riesgo }}</td>
+            </tr>
+            <tr>
+                <th>Mantenimiento calibración:</th>
+                <td>{{ producto.mantenimiento_calibracion }}</td>
+            </tr>
+            <tr>
+                <th>Fecha adquisición:</th>
+                <td>{{ producto.fecha_adquisicion }}</td>
+            </tr>
+            <tr>
+                <th>Año adquisición:</th>
+                <td>{{ producto.anio_adquisicion }}</td>
+            </tr>
+            <tr>
+                <th>Información adicional:</th>
+                <td>{{ producto.informacion_adicional }}</td>
+            </tr>
+        </table>
+        <a href="{% url 'lista_productos' %}" class="btn btn-primary mt-3">Volver a la lista</a>    </div>
+</body>
+</html>

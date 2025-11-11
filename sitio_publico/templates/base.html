@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaDoPro</title>
+    <link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+    <!--<link rel="stylesheet" href="{% static 'css/secciones.css' %}">>-->
+    {% block extra_head %}{% endblock %}
+</head>
+<body> 
+    <!--class="{% block body_class %}{% endblock %}">-->
+
+    <!-- Header con navegación -->
+    <header>
+    <a href="{% url 'inicio' %}"> 
+    <img src="{% static 'image/lablogo.png' %}" alt="Logo del laboratorio">
+    </a>
+    <nav class="tabs">
+        <a href="{% url 'inicio' %}" class="tab">Home</a>
+        <a href="{% url 'quienes_somos' %}" class="tab">Quiénes somos</a>
+        <a href="{% url 'servicios' %}" class="tab">Servicios</a>
+        <a href="{% url 'contacto' %}" class="tab">Contacto</a>
+        <a href="{% url 'notas_interes' %}" class="tab">Notas de Interés</a>
+        <a href="{% url 'actividades_academicas' %}" class="tab">Actividades Académicas</a>
+        <a href="{% url 'login' %}" class="tab">Acceso restringido</a>
+    </nav>     
+</header>
+
+    <main>
+        {% block content %} <!-- Aquí se insertará el contenido de cada página -->
+        {% endblock %}
+    </main>
+
+    <!-- Pie de página con los datos de contacto y el newsletter -->
+    <footer class="footer">
+    <div class="footer-container">
+        <!-- Columna izquierda -->
+    <div class="footer-left">
+        <div class="footer-logos">
+            <img src="{% static 'image/lablogo1.png' %}" alt="Logo" class="footer-logo">
+            <img src="{% static 'image/unlp.png' %}" alt="unlp" class="footer-unlp">
+        </div> 
+        <div class="footer-info">
+            <div class="address-wrap">
+                <img src="{% static 'image/pin.jpg' %}" alt="Pin" class="footer-icon">
+                <p>Dirección: Departamento de Física - UNLP, C.C. N 67, B1900 La Plata, Provincia de Buenos Aires</p>
+            </div>
+            <div class="address-wrap">
+                <img src="{% static 'image/mail.jpg' %}" alt="Mail" class="footer-icon">
+            <p><a href="mailto:ladopro.unlp@gmail.com">ladopro@fisica.unlp.edu.ar</a></p>
+            </div>
+            <div class="address-wrap">
+                <img src="{% static 'image/tel.png' %}" alt="Tel" class="footer-icon">
+                <p>Tel: +54 221 4246062</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="footer-right">
+        <h3>📧 Suscribite a nuestro newsletter</h3>
+        <div class="newsletter">
+            <form id="newsletterForm">
+                <input type="email" id="newsletterEmail" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirse</button>
+            </form>
+            <p id="newsletterMsg" style="color:white; font-size:0.9rem; margin-top:10px;"></p>
+
+<script>
+document.getElementById("newsletterForm").addEventListener("submit", async function(e){
+    e.preventDefault(); // evita el refresco de página
+
+    const email = document.getElementById("newsletterEmail").value.trim();
+    const msg = document.getElementById("newsletterMsg");
+
+    if (!email) {
+        msg.textContent = "⚠️ Ingresá un correo válido.";
+        return;
+    }
+
+    try {
+        const resp = await fetch("/api/suscribir/", {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: { "Content-Type": "application/json" }
+    });
+
+
+        const data = await resp.json();
+        if (data.status === "ok") {
+            msg.textContent = "✅ ¡Gracias por suscribirte!";
+            this.reset();
+        } else {
+            msg.textContent = "⚠️ Error: " + (data.message || "Intenta más tarde.");
+        }
+    } catch (error) {
+        msg.textContent = "⚠️ No se pudo conectar al servidor.";
+        console.error("Error:", error);
+    }
+});
+</script>
+
+        </div>
+    </div>
+</div>
+    <p class="footer-copy">&copy; 2025 LaDoPro. Todos los derechos reservados.</p>
+    <p class="footer-author">Desarrollado por Venecia C. (vene23) <a href="https://github.com/vene23" target="_blank">🔗</a></p></footer>
+</body>
+</html>

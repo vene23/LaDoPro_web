@@ -1,0 +1,54 @@
+import csv
+from django.core.management.base import BaseCommand
+from inventario.models import Producto
+
+class Command(BaseCommand):
+    help = 'Importar datos de inventario desde un archivo CSV'
+
+    def handle(self, *args, **kwargs):
+        archivo_csv = r'C:\Users\PC\OneDrive\Aaa-PROGRAMAS\LaDoPro\inventario_lab\inventario.csv'
+
+        try:
+            with open(archivo_csv, 'r', encoding='utf-8') as csvfile:
+                reader = csv.DictReader(csvfile)
+                
+                for fila in reader:
+                    # Reemplaza valores vacíos o 'N/A' con 'N/A' para los campos obligatorios
+                    nombre = fila['equipo_instrumento'] if fila['equipo_instrumento'] not in ['', 'N/A'] else 'N/A'
+                    marca = fila['marca_fabricante'] if fila['marca_fabricante'] not in ['', 'N/A'] else 'N/A'
+                    modelo = fila['modelo'] if fila['modelo'] not in ['', 'N/A'] else 'N/A'
+                    numero_serie = fila['nro_serie'] if fila['nro_serie'] not in ['', 'N/A'] else 'N/A'
+                    objetivo_uso = fila['objeto_uso'] if fila['objeto_uso'] not in ['', 'N/A'] else 'N/A'
+
+                    # Si algún campo opcional está vacío o es 'N/A', lo dejamos nulo o 'N/A'
+                    clasificacion_riesgo = fila['clasificacion_riesgo'] if fila['clasificacion_riesgo'] not in ['', 'N/A'] else None
+                    mantenimiento_calibracion = fila['mantenimiento_calibracion'] if fila['mantenimiento_calibracion'] not in ['', 'N/A'] else None
+                    fecha_adquisicion = fila['fecha_adquisicion'] if fila['fecha_adquisicion'] not in ['', 'N/A'] else None
+                    anio_adquisicion = int(fila['fecha_adquisicion']) if fila['fecha_adquisicion'].isdigit() and len(fila['fecha_adquisicion']) == 4 else None
+                    informacion_adicional = fila['informacion_adicional'] if fila['informacion_adicional'] not in ['', 'N/A'] else None
+
+                    producto = Producto(
+                        nombre=nombre,
+                        marca=marca,
+                        modelo=modelo,
+                        numero_serie=numero_serie,
+                        objetivo_uso=objetivo_uso,
+                        cantidad=int(fila['cantidad']) if fila['cantidad'].isdigit() else 0,
+                        estado=fila['estado'] if fila['estado'] not in ['N/A', ''] else 'Funcionando',
+                        clasificacion_riesgo=clasificacion_riesgo,
+                        mantenimiento_calibracion=mantenimiento_calibracion,
+                        fecha_adquisicion=fecha_adquisicion,
+                        anio_adquisicion=anio_adquisicion,
+                        informacion_adicional=informacion_adicional,
+                    )
+
+                    # Guardar el producto
+                    producto.save()
+
+            self.stdout.write(self.style.SUCCESS('Datos de inventario importados correctamente.'))
+
+        except FileNotFoundError:
+            self.stderr.write(self.style.ERROR('Error: El archivo no se encontró.'))
+        except Exception as e:
+            self.stderr.write(self.style.ERROR(f'Ocurrió un error: {e}'))
+

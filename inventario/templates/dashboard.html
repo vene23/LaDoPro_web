@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>           
+<body>
+    <!-- 🔹 Encabezado con botón cerrar sesión -->
+        <div class="header-dashboard">
+            <h1>Panel interno LaDoPro</h1>
+            <div class="user-info">
+            <span>👤 {{ user.username }}</span>
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+            </div>
+        </div>
+
+    <h3>LaDoPro solo para miembros ;)</h3>
+
+    <div class="tarjetas-contenedor">
+        <div class="tarjeta">
+            <h2>Inventario</h2>
+            <p>Gestión de productos y existencias.</p>
+            <a href="{% url 'lista_productos' %}" class="btn">Ir al inventario</a>
+        </div>
+        <div class="tarjeta">
+            <h2>Modelos de Informes</h2>
+            <p>Descarga plantillas y formatos de informes.</p>
+            <a href="#" class="btn">Ver modelos</a>
+        </div>
+        <div class="tarjeta">
+            <h2>Informes Pendientes</h2>
+            <p>Consulta y completa informes pendientes.</p>
+            <a href="#" class="btn">Ver informes</a>
+        </div>
+        <div class="tarjeta">
+            <h2>Otros</h2>
+            <p>Accede a recursos adicionales.</p>
+            <a href="#" class="btn">Explorar</a>
+        </div>
+    </div>
+</body>
+</html>

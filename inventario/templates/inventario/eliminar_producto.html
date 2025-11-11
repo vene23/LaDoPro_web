@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Producto</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Eliminar Producto</h1>
+
+    <p>¿Estás seguro que deseas eliminar el producto "{{ producto.nombre }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <p>¿Estás seguro de que deseas eliminar este producto?</p>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+    </form>
+
+    <a href="{% url 'lista_productos' %}" class="btn btn-secondary mt-2">Volver a la lista</a>
+</body>
+</html>
+

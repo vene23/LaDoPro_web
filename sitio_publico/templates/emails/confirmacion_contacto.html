@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: #f9f9f9;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 { color: #1c3d7a; }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">
+            <!-- usa Content-ID embebido -->
+            <img src="cid:ladopro_logo" alt="LaDoPRO Logo">
+        </div>
+        <h2>Hola {{ nombre }},</h2>
+        <p>Gracias por ponerte en contacto con <strong>LaDoPro</strong>.</p>
+        <p>Recibimos tu mensaje y en breve alguien de nuestro equipo te va a responder.</p>
+        <p>Saludos cordiales,<br>
+        <strong>Equipo LaDoPro</strong></p>
+    </div>
+</body>
+</html>

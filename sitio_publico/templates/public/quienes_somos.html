@@ -1,0 +1,73 @@
+{% extends 'base.html' %}  
+{% load static %}
+{% block body_class %}quienes-somos{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/quienes_somos.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="sobre_laboratorio">
+    <h2>Quiénes Somos</h2>
+    <p>
+    La Plataforma Tecnológica LaDoPro (Laboratorio de Dosimetría y Protección Radiológica) forma parte del Departamento de Física de la Facultad de Ciencias Exactas de la UNLP. Desde 2019, trabajamos para garantizar la seguridad y calidad en el uso de radiaciones ionizantes, apoyando a centros de salud, profesionales y al público en general.
+    </p>
+    <p>
+    Nuestro objetivo es combinar experiencia técnica, investigación y formación para ofrecer soluciones confiables y actualizadas. Buscamos además generar espacios de aprendizaje y capacitación para estudiantes, graduados y profesionales del área.    
+    </p>
+</section>
+
+
+<section id="quienes_somos">
+    <h2>Nuestros servicios incluyen</h2>
+        <img src="/static/image/laboratorio.png" alt="Laboratorio">
+        <ul>
+            <li>Cálculos de blindajes para radiología, mamografía, tomografía y otros equipos emisores de radiación.</li>
+            <li>Verificación de niveles de radiación en instalaciones.</li>
+            <li>Monitoreo y evaluación de riesgos para profesionales expuestos.</li>
+            <li>Asesoramiento en la planificación y selección de nuevas tecnologías.</li>
+            <li>Apoyo en la elaboración de pliegos técnicos y licitaciones de equipamiento.</li>
+            <li>Monitoreo de elementos de protección personal.</li>
+        </ul>
+</section> 
+
+<section id="vision">
+    <p>En LaDoPro trabajamos para que los equipos funcionen de manera segura, los profesionales estén protegidos y los pacientes reciban atención de calidad, mientras fomentamos la investigación y formación académica en protección radiológica.</p>
+</section>
+    </main>
+
+    <div class="integrantes">
+        <h2>Nuestro Staff</h2>
+        <div class="team">
+            <div class="team-member">
+                <h3>Directorio</h3>
+                <p>Dra. Laura Damonte</p>
+            </div>
+            <div class="team-member">
+                <h3>Área de Gerenciamiento técnico-administrativo</h3>
+                <p>Lic. Diego Puntigliano</p>
+                <p>Lic. Vanesa María Sanz</p>
+            </div>
+            <div class="team-member">
+                <h3>Área de gestión académica</h3>
+                <p>Dra. Yamil Chain</p>
+                <p>Dra. Agustina Corti</p>
+                <p>Lic. Malena Taube</p>
+            </div>
+            <div class="team-member">
+                <h3>Becas y cargos de entrenamiento</h3>
+                <p>Venecia Calandrón (Beca formativa, FCE)</p>
+                <p>María Julia Vitaller (Cargo AD)</p>
+            </div>
+            <div class="team-member">
+                <h3>Graduados</h3>
+                <p>Lic. Malena Taube (Becaria doctoral CONICET)</p>
+            </div>
+                <div class="team-member">
+                <h3>Asesores</h3>
+                <p>Doc. Luis Illanes</p>
+                <p>Ing. Gustavo Daniel Sanchez Vivanco</p>
+            </div>
+        </div>
+        </div>
+{% endblock %}
+

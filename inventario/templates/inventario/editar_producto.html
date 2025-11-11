@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Editar Producto</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>¿Estás seguro de que deseas editar este producto?</p>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+
+    <a href="{% url 'lista_productos' %}" class="btn btn-secondary mt-2">Volver a la lista</a>
+</body>
+</html>
+

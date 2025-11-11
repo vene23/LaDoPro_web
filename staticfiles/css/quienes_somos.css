@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    /*background-color: #f4f4f9;*/
+}
+
+/*footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #cbd9f8;
+    color: #080808;
+}*/
+
+header {
+    padding: 10px;
+    background: linear-gradient(190deg, #ffffff, #ffffff);
+    color: #050505;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center;
+    /*font-size: 2em;*/
+    margin-bottom: 10px;
+}
+
+header p {
+    margin: 10px 0 20px;
+    font-size: 1.2em;
+}
+
+#sobre_laboratorio {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#sobre_laboratorio h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #3535a7;
+    text-align: center;
+}
+
+#sobre_laboratorio img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+#sobre_laboratorio li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Sección "Principales Funciones" */
+#quienes_somos {
+  max-width: 800px;
+  margin: 30px auto;
+  background: #dbedff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#quienes_somos h2 {
+  font-size: 1.6em;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#quienes_somos ul {
+  padding-left: 20px;
+}
+
+#quienes_somos li {
+  margin-bottom: 10px;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+/* Sección "Nuestro Staff" */
+.integrantes {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #eef3fb;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.integrantes h2 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.team-member {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+  color: #1c3d7a;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  margin: 5px 0;
+  font-size: 0.95em;
+  color: #333;
+}
+

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}  
+{% load static %}
+{% block body_class %}servicios{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/secciones.css' %}">
+{% endblock %}
+
+{% block content %}
+
+        <h2 id="titulo-principal">Servicios del Laboratorio</h2>
+    <section id="servicios">
+
+        <section class="tarjeta">
+            <div class="frontal">
+                <img src="{% static 'image/serv_cc_imagen.png' %}" alt="Control de calidad de imagen">
+                <h2>Control de calidad de imagen</h2>
+            </div>
+                <!-- Cara Trasera -->
+            <div class="trasera">
+                <p>Se verifica que los equipos que utilizan radiación ionizante (mamografía, radiografía, tomografía) cumplan con los parámetros técnicos específicos de cada modalidad, garantizando la obtención de imágenes con calidad adecuada para la interpretación clínica.</p>
+                <a href="{% url 'contacto' %}" class="boton-info">Más info</a>
+            </div>
+        </section>
+
+        <section class="tarjeta">
+            <div class="frontal">
+                <img src="{% static 'image/serv_cc.jpg' %}" alt="Control de calidad">
+                <h2>Control de calidad</h2>
+            </div>
+            <div class="trasera">
+                <p>Se comprueba el correcto funcionamiento de los equipos que utilizan radiación ionizante, asegurando su calibración y operatividad para un uso seguro y confiable</p>
+                <a href="{% url 'contacto' %}" class="boton-info">Más info</a>
+            </div>
+        </section>
+
+        <section class="tarjeta">
+            <div class="frontal">
+                <img src="{% static 'image/serv_levantradio.jpg' %}" alt="Levantamiento radiométrico">
+                <h2>Levantamiento radiométrico</h2>
+            </div>
+            <div class="trasera">
+                <p>Se evalúan los blindajes de las salas, verificando su capacidad de protección para profesionales y público. Además, se revisa la disposición de los elementos de protección personal.</p>
+                <a href="{% url 'contacto' %}" class="boton-info">Más info</a>
+            </div>
+        </section>
+
+        <section class="tarjeta">
+            <div class="frontal">
+                <img src="{% static 'image/serv_ivisual.png' %}" alt="Inspección visual">
+                <h2>Inspección visual</h2>
+            </div>
+            <div class="trasera">
+                <p>Se constata que los equipos estén completos, en buen estado y operativos, favoreciendo y asegurando un entorno de trabajo seguro y confiable.</p>
+                <a href="{% url 'contacto' %}" class="boton-info">Más info</a>
+            </div>
+        </section>
+
+        <section class="tarjeta">
+            <div class="frontal">
+                <img src="{% static 'image/serv_asesoramiento.png' %}" alt="Asesoramiento">
+                <h2>Asesoramiento</h2>
+            </div>
+            <div class="trasera">
+                <p>Se brinda asistencia personalizada en la compra de equipos, diseño de blindajes y optimización de procesos, adaptada a las necesidades de cada cliente.</p>
+                <a href="{% url 'contacto' %}" class="boton-info">Más info</a>
+            </div>
+        </section>
+
+        <section class="tarjeta">
+            <div class="frontal">
+                <img src="{% static 'image/serv_niveles_ref.png' %}" alt="Niveles de referencia diagnóstico">
+                <h2>Niveles de referencia diagnóstico</h2>
+            </div>
+            <div class="trasera">
+                <p>Se establecen valores de referencia que sirven como guía para optimizar el uso de la radiación en los distintos estudios. El objetivo es obtener imágenes de calidad diagnóstica, al mismo tiempo que priorizan la reducción de la dosis al paciente y la optimización de las prácticas</p>
+                <a href="{% url 'contacto' %}" class="boton-info">Más info</a>
+            </div>
+        </section>
+
+        <section class="tarjeta">
+            <div class="frontal">
+                <img src="{% static 'image/calculob.png' %}" alt="Cálculo de blindaje">
+                <h2>Cálculo de blindaje</h2>
+            </div>
+            <div class="trasera">
+                <p>Se determinan los blindajes requeridos para nuevas instalaciones de radiografía, tomografía o mamografía, así como para salas que hayan sufrido modificaciones, garantizando la seguridad radiológica de todo el entorno.</p>
+                <a href="{% url 'contacto' %}" class="boton-info">Más info</a>
+            </div>
+        </section>
+
+        <section class="tarjeta">
+            <div class="frontal">
+                <img src="{% static 'image/capacitaciones.jpg' %}" alt="Capacitaciones">
+                <h2>Capacitaciones</h2>
+            </div>
+            <div class="trasera">
+                <p>Se ofrecen cursos teóricos y prácticos en seguridad y control de calidad, dirigidos a profesionales y público interesado, con programas adaptados a distintos niveles de conocimiento.</p>
+                <a href="{% url 'contacto' %}" class="boton-info">Más info</a>
+            </div>
+        </section>
+
+        <section class="tarjeta">
+            <div class="frontal">
+                <img src="{% static 'image/serv_insvestigacion.png' %}" alt="Control de calidad de imagen">
+                <h2>Investigación</h2>
+            </div>
+                <!-- Cara Trasera -->
+            <div class="trasera">
+                <p>Se promueve el crecimiento técnico y académico, por medio de la generación de nuevos espacios de investigación y formulación de proyectos en dosimetría,  protección radiológica, aseguramiento de la calidad en la utilización de las radiaciones ionizantes.</p>
+                <a href="{% url 'contacto' %}" class="boton-info">Más info</a>
+            </div>
+        </section>
+    </section>
+    </main>
+{% endblock %}
+

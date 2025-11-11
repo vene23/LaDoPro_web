@@ -1,0 +1,208 @@
+/* Estilo general del cuerpo */
+body {
+    background: linear-gradient(190deg, #fffefe, #f4f4f4);
+    font-family: Arial, sans-serif;
+    margin: 40;
+    padding: 10;
+    color: #333;
+}
+
+
+/* Estilo común para los contenedores principales */
+section {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#titulo-principal {
+  font-size: 24px;         /* achica el tamaño del título */
+  /*font-weight: normal;     /* lo hace menos grueso */
+  margin-left: 30px;       /* lo corre hacia la derecha */
+  margin-top: 20px;        /* opcional: separa del contenido anterior */
+  color: #353434;             /* opcional: tono más suave que el negro puro */
+}
+
+
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Sección: Servicios */
+#servicios {
+    background: linear-gradient(135deg, #acc2f0, #4fa75b);
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Las tarjetas se acomoden automáticamente en filas de 3 (o menos si el ancho de pantalla es chico).*/
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px; /* Ajusta el ancho total */
+    margin: 0 auto; /* Centra el contenido */
+}
+
+/* Estilo de las tarjetas */
+.tarjeta {
+    position: relative; /* Necesario para posicionar las caras */
+    width: 300px; /* Ajusta según el tamaño deseado */
+    height: 300px; /* Altura fija para la tarjeta */
+    perspective: 1000px; /* Habilitar perspectiva 3D */
+    padding: 10px;
+}
+
+.tarjeta div {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.tarjeta:hover div {
+    transform: rotateY(180deg);
+}
+
+/* Cara frontal y trasera */
+.tarjeta .frontal,
+.tarjeta .trasera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara trasera cuando no está activa */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.6s ease-in-out; /* Animación suave */
+    
+}
+
+.tarjeta .frontal {
+    background-color: #f8ffd3f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta .trasera {
+    transform: rotateY(180deg); /* Rota la cara trasera */
+    background-color: #324883; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px; /* Espacio interno para que el texto no toque los bordes */
+    line-height: 1.5; /* Espaciado entre renglones más cómodo */
+    max-width: 90%; /* texto tenga un ancho máximo para que no se extienda demasiado*/
+    letter-spacing: 0.4px;
+}
+
+.tarjeta:hover .frontal {
+    transform: rotateY(180deg); /* Girar frontal cuando se activa */
+}
+
+.tarjeta:hover .trasera {
+    transform: rotateY(0deg); /* Girar trasera hacia adelante */
+}
+.frontal img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.frontal h2 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #3535a7;
+}
+
+.boton-info {
+margin-top: 15px;
+padding: 8px 12px;
+background-color: #96eefa;
+color: #32836f;
+font-weight: bold;
+text-decoration: none;
+border-radius: 6px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+transition: background-color 0.3s ease;
+}
+
+.boton-info:hover {
+background-color: #e0f2f1;
+}
+
+
+
+/* Sección: Formulario de contacto */
+#contacto {
+    background: linear-gradient(135deg, #bff04c, #8cbf34);
+    color: #333;
+}
+
+#contacto input,
+#contacto textarea,
+#contacto button {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+#contacto button {
+    background-color: #5a5af5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contacto button:hover {
+    background-color: #3535a7;
+}
+
+/* Botón de enlace común */
+a.tab {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a.tab:hover {
+    background-color: #444;
+}
+
+/* Agregar imágenes */
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    section {
+        padding: 15px;
+    }
+
+    #sobre_laboratorio h1,
+    #servicios h1,
+    #contacto h1 {
+        font-size: 1.5em;
+    }
+}

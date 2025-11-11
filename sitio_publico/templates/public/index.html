@@ -1,0 +1,48 @@
+{% extends 'base.html' %}  
+{% load static %}
+
+{% block extra_head %}
+<!--<link rel="stylesheet" href="{% static 'css/main_style.css' %}">-->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script> <!-- JS de Swiper -->
+<script src="{% static 'js/script.js' %}" defer></script> <!-- Script para interactividad -->
+{% endblock %}
+
+{% block content %}
+    <!-- Sección de servicios -->
+    <section id="services">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <h3>Investigación</h3>
+              <img src="/static/image/investigacion.jpg" alt="Servicio 1">
+            </div>
+            <div class="swiper-slide">
+              <h3>Levantamiento radiométrico</h3>
+              <img src="/static/image/levant_radiom.jpg" alt="Servicio 2">
+            </div>
+            <div class="swiper-slide">
+              <h3>Control de calidad</h3>
+              <img src="/static/image/contr_calidad.jpg" alt="Servicio 3">
+            </div>
+            <div class="swiper-slide">
+              <h3>Control de calidad de imagen</h3>
+              <img src="/static/image/contr_imag.jpg" alt="Servicio 4">
+            </div>              
+            <div class="swiper-slide">
+              <h3>Inspección visual</h3>
+              <img src="/static/image/insp_visual.jpg" alt="Servicio 5">
+            </div>
+          </div>
+          <!-- Agrega paginación-->
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>  <!-- ← flecha izquierda -->
+          <div class="swiper-button-next"></div>  <!-- → flecha derecha -->
+        </div>
+      </section>
+{% endblock %}
+
+{% block extra_scripts %}
+<!-- Script para interactividad -->
+<script src="/static/js/script.js" defer></script> <!-- script general de interactividad -->
+{% endblock %}

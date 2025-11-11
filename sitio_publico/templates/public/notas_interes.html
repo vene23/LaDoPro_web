@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_class %}notas-interes{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/notas_interes.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="notas">
+<h2>Notas de Interés</h2>
+<p>En esta sección compartimos artículos, investigaciones y recursos relevantes sobre protección radiológica, calidad en equipamiento médico y avances en física médica.</p>
+
+<div class="notas-contenido">
+<div class="notas-grid">
+    <div class="nota-card">
+    <h3>Nuevo laboratorio de control y protección radiológica</h3>
+    <p>La Universidad Nacional de La Plata creó el Laboratorio de Dosimetría y Protección Radiológica (LaDoPro), dependiente del Departamento de Física. El  objetivo  brindar asesoramiento sobre...</p>
+    <a href="https://unlp.edu.ar/investigacion/nuevo-laboratorio-especializado-en-control-de-equipamiento-y-proteccion-radiologica-16045-21045/" class="boton-info">👉 Leé la nota completa</a>
+    </div>
+    <div class="nota-card">
+    <h3>El LaDoPro realiza controles en el Hospital Dr. Rodolfo Rossi</h3>
+    <p>Buscan asegurar que las dosis de radiación que reciben los pacientes no les provoque daños irreversibles.</p>
+    <a href="https://www.exactas.unlp.edu.ar/articulo/2019/7/16/el_ladopro_realiza_controles_en_el_hospital_dr__rodolfo_rossi" class="boton-info">👉 Leé la nota completa</a>
+    </div>
+    <div class="nota-card">
+    <h3>Física médica, el puente entre la física, la salud y la investigación</h3>
+    <p>La física médica aplica conocimientos de la física al diagnóstico y tratamiento de enfermedades. Su impacto abarca desde la protección radiológica hasta el desarrollo de nuevas tecnologías médicas.</p>
+    <a href="https://unlp.edu.ar/investiga/cienciaenaccion/fisica-medica-el-puente-entre-la-fisica-la-salud-y-la-investigacion-90285/" class="boton-info">👉 Leé la nota completa</a>
+    </div>
+</div>
+    <div class="video-nota">
+    <iframe src="https://drive.google.com/file/d/1650NS8ylE882EPz4eAqAfyxsvWuwYpuc/preview" 
+    width="100%" height="400" allow="autoplay" allowfullscreen></iframe>
+    </div>
+<div class="notas-grid">
+    <div class="nota-card">
+    <h3>La UNLP creó un nuevo laboratorio de control y protección radiológica para la región</h3>
+    <p>El espacio funcionará bajo la órbita de la facultad de Ciencias Exactas.</p>
+    <a href="https://www.0221.com.ar/nota/2019-5-15-20-32-0-la-unlp-creo-un-nuevo-laboratorio-de-control-y-proteccion-radiologica-para-la-region" class="boton-info">👉 Leé la nota completa</a>
+    </div>
+    <div class="nota-card">
+    <h3>Riesgo radiológico nadie controla que los equipos de rayos funcionen bien información general</h3>
+    <p>Casi una veintena de sociedades científicas reclaman que se ponga fin un peligroso vacío legal que hoy produce lesiones tanto en pacientes como en profesionales expuestos a radiación</p>
+    <a href="https://www.eldia.com/nota/2019-9-29-2-0-23-riesgo-radiologico-nadie-controla-que-los-equipos-de-rayos-funcionen-bien-informacion-general" class="boton-info">👉 Leé la nota completa</a>
+    </div>
+    <div class="nota-card">
+    <h3>La Universidad de la Plata controlará que tus estudios por imagen sean seguros</h3>
+    <p>Crearon un laboratorio que asesora sobre la protección radiológica y controla la calidad de los mamógrafos y tomógrafos.</p>
+    <a href="https://tn.com.ar/salud/noticias/2019/05/15/la-universidad-de-la-plata-controlara-que-tus-estudios-por-imagen-sean-seguros/" class="boton-info">👉 Leé la nota completa</a>
+    </div>
+    <div class="nota-card">
+    <h3>Se crea el Laboratorio de Dosimetría y Protección Radiológica</h3>
+    <p>Brindará asesoramiento sobre protección radiológica, acreditará la calidad del equipamiento y generará un espacio de formación</p>
+    <a href="https://www.exactas.unlp.edu.ar/articulo/2019/4/28/se_crea_el_laboratorio_de_dosimetria_y_proteccion_radiologica" class="boton-info">👉 Leé la nota completa</a>
+    </div>
+    <div class="nota-card">
+    <h3>El Laboratorio de Dosimetría y Protección Radiológica en Santa Cruz</h3>
+    <p>La jornada a estudiantes, profesionales de la salud y el público en general de la ciudad de Santa Cruz y zonas aledañas</p>
+    <a href="https://www.exactas.unlp.edu.ar/articulo/2019/7/5/el_laboratorio_de_dosimetria_y_proteccion_radiologica_en_santa_cruz" class="boton-info">👉 Leé la nota completa</a>
+    </div>
+</div>
+    {% include 'public/notas_extra.html' %}
+</div>
+</section>
+{% endblock %}
