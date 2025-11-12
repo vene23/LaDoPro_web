@@ -159,10 +159,3 @@ print("STATICFILES_DIRS:", STATICFILES_DIRS)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-if not DEBUG:
-    import sys
-    from django.core.management import call_command
-    try:
-        call_command('collectstatic', interactive=False, verbosity=2)
-    except Exception as e:
-        print("Collectstatic failed:", e, file=sys.stderr)
