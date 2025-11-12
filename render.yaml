@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: ladopro
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: bash -lc "python manage.py collectstatic --noinput && gunicorn inventario_lab.wsgi:application --bind 0.0.0.0:$PORT"
+    autoDeploy: true
