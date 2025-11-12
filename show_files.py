@@ -1,10 +1,12 @@
 import os
 
-print("📁 Archivos visibles en el entorno de Render:")
-for root, dirs, files in os.walk(".", topdown=True):
-    level = root.replace(os.getcwd(), "").count(os.sep)
-    indent = " " * 2 * level
-    print(f"{indent}{os.path.basename(root)}/")
-    subindent = " " * 2 * (level + 1)
+print("📁 Contenido de inventario/static:")
+for root, dirs, files in os.walk("inventario/static"):
     for f in files:
-        print(f"{subindent}{f}")
+        print(os.path.join(root, f))
+
+print("\n📁 Contenido de sitio_publico/static:")
+for root, dirs, files in os.walk("sitio_publico/static"):
+    for f in files:
+        print(os.path.join(root, f))
+
