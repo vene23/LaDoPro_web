@@ -27,8 +27,11 @@ SECRET_KEY = config('SECRET_KEY')  # Carga desde .env
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
+# Hosts permitidos
+if DEBUG:
+    ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+else:
+    ALLOWED_HOSTS = ['ladopro.onrender.com']
 
 # Application definition
 INSTALLED_APPS = [
