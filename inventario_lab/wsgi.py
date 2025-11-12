@@ -14,3 +14,5 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'inventario_lab.settings')
 
 application = get_wsgi_application()
+
+print("STATICFILES content:", os.listdir(os.path.join(os.path.dirname(__file__), 'staticfiles')) if os.path.exists('staticfiles') else "NO STATICFILES DIR FOUND")
