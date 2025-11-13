@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')  # Carga desde .env
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 # Hosts permitidos
 if DEBUG:
@@ -154,8 +154,6 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
-# Imprime rutas estáticas para depuración
-print("STATICFILES_DIRS:", STATICFILES_DIRS)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
