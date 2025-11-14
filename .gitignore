@@ -12,7 +12,8 @@ __pycache__/
 *.csv
 
 # Archivos estáticos recolectados
-/staticfiles/
+staticfiles/
+staticfiles_backup/
 
 # Archivos del editor
 .vscode/
