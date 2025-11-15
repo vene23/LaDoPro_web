@@ -154,5 +154,10 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
 
