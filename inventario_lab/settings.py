@@ -33,6 +33,10 @@ if DEBUG:
 else:
     ALLOWED_HOSTS = ['ladopro.up.railway.app']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://ladopro.up.railway.app",
+]
+
 
 # Application definition
 INSTALLED_APPS = [
