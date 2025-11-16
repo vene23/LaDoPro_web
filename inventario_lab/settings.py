@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 from decouple import config  # Biblioteca para cargar variables del archivo .env
 import dj_database_url
+import resend
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -147,13 +149,10 @@ LOGIN_URL = '/login/'  # Ruta a la vista de inicio de sesión
 LOGIN_REDIRECT_URL = '/inventario/dashboard/'
 
 # Configuración de correo real
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_APP_PASSWORD")
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+DEFAULT_FROM_EMAIL = "LaDoPro <ladopro.unlp@gmail.com>"
 
 # Activar log de errores SMTP
 import logging

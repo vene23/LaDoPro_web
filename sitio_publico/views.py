@@ -3,6 +3,7 @@ from .forms import ContactoForm
 from django.core.mail import EmailMessage
 from email.mime.image import MIMEImage  # para embebido
 import os
+import resend
 from django.conf import settings
 from django.template.loader import render_to_string
 import requests
@@ -26,48 +27,47 @@ def contacto_view(request):
             asunto = cd.get('asunto') or 'Consulta desde web'
             cuerpo = f"Nombre: {cd['nombre']}\nEmail: {cd['email']}\n\nMensaje:\n{cd['mensaje']}"
 
+            # activar API
+            resend.api_key = settings.RESEND_API_KEY
+            
             try:
-                # 1. Mail principal a Ladopro (gmail) + copia a institucional
-                email_obj = EmailMessage(
-                    asunto,
-                    cuerpo,
-                    settings.EMAIL_HOST_USER,
-                    ['ladopro.unlp@gmail.com', 'ladopro@fisica.unlp.edu.ar']  # ambos reciben copia
-                )
-                email_obj.send()
-
-                # 2. Mail de confirmación al usuario con HTML + logo
-                html_content = render_to_string("emails/confirmacion_contacto.html", {
-                    'nombre': cd['nombre']
+                # 1) Mail al laboratorio
+                resend.Emails.send({
+                    "from": "LaDoPro <ladopro.unlp@gmail.com>",
+                    "to": [
+                        "ladopro.unlp@gmail.com",
+                        "ladopro@fisica.unlp.edu.ar"
+                    ],
+                    "subject": asunto,
+                    "text": cuerpo,
                 })
-                confirmacion = EmailMessage(
-                    "Gracias por tu consulta - LaDoPro",
-                    html_content,
-                    settings.EMAIL_HOST_USER,
-                    [cd['email']]
+
+                # 2. Mail de confirmación al usuario con HTML 
+                html_content = render_to_string("emails/confirmacion_contacto.html", {
+                    'nombre': cd['nombre']}
                 )
-                confirmacion.content_subtype = "html"  # lo marca como HTML
-                # Ruta al logo dentro de tu carpeta static
-                logo_path = os.path.join(settings.BASE_DIR, "sitio_publico/static/image/lablogo.png")
 
-                if os.path.exists(logo_path):
-                    with open(logo_path, "rb") as f:
-                        logo_data = f.read()
-                        image = MIMEImage(logo_data)
-                        image.add_header("Content-ID", "<ladopro_logo>")  # referencia en el HTML
-                        confirmacion.attach(image)
+                resend.Emails.send({
+                    "from": "LaDoPro <ladopro.unlp@gmail.com>",
+                    "to": cd["email"],
+                    "subject": "Gracias por tu consulta - LaDoPro",
+                    "html": html_content,
+                })
                 
-                confirmacion.send()
-
-                mensaje_servidor = "¡Consulta enviada correctamente! Gracias."
+                mensaje_servidor = "¡Consulta enviada correctamente!"
                 form = ContactoForm()
             except Exception as e:
-                print("Error SMTP:", e)
+                print("Error Resend:", e)
                 mensaje_servidor = "Error al enviar. Intenta luego."
-    else:
-        form = ContactoForm()
-    return render(request, 'public/contacto.html', {'form': form, 'mensaje_servidor': mensaje_servidor})
 
+            else:
+                form = ContactoForm()
+
+            return render(request, 'public/contacto.html', {
+                'form': form,
+                'mensaje_servidor': mensaje_servidor
+            })
+        
 def notas_interes(request):
     return render(request, 'public/notas_interes.html')
 
