@@ -19,7 +19,8 @@ def servicios(request):
     return render(request, 'public/servicios.html')
 
 def contacto_view(request):
-    mensaje_servidor =""
+    mensaje_servidor = ""
+
     if request.method == 'POST':
         form = ContactoForm(request.POST)
         if form.is_valid():
@@ -27,11 +28,11 @@ def contacto_view(request):
             asunto = cd.get('asunto') or 'Consulta desde web'
             cuerpo = f"Nombre: {cd['nombre']}\nEmail: {cd['email']}\n\nMensaje:\n{cd['mensaje']}"
 
-            # activar API
+            import resend
             resend.api_key = settings.RESEND_API_KEY
-            
+
             try:
-                # 1) Mail al laboratorio
+                # 1) Enviar al laboratorio
                 resend.Emails.send({
                     "from": "LaDoPro <ladopro.unlp@gmail.com>",
                     "to": [
@@ -39,34 +40,37 @@ def contacto_view(request):
                         "ladopro@fisica.unlp.edu.ar"
                     ],
                     "subject": asunto,
-                    "text": cuerpo,
+                    "text": cuerpo
                 })
 
-                # 2. Mail de confirmación al usuario con HTML 
-                html_content = render_to_string("emails/confirmacion_contacto.html", {
-                    'nombre': cd['nombre']}
+                # 2) Confirmación al usuario
+                html_content = render_to_string(
+                    "emails/confirmacion_contacto.html",
+                    {'nombre': cd['nombre']}
                 )
 
                 resend.Emails.send({
                     "from": "LaDoPro <ladopro.unlp@gmail.com>",
                     "to": cd["email"],
                     "subject": "Gracias por tu consulta - LaDoPro",
-                    "html": html_content,
+                    "html": html_content
                 })
-                
+
                 mensaje_servidor = "¡Consulta enviada correctamente!"
                 form = ContactoForm()
+
             except Exception as e:
                 print("Error Resend:", e)
                 mensaje_servidor = "Error al enviar. Intenta luego."
 
-            else:
-                form = ContactoForm()
+    else:
+        form = ContactoForm()
 
-            return render(request, 'public/contacto.html', {
-                'form': form,
-                'mensaje_servidor': mensaje_servidor
-            })
+    return render(request, 'public/contacto.html', {
+        'form': form,
+        'mensaje_servidor': mensaje_servidor
+    })
+
         
 def notas_interes(request):
     return render(request, 'public/notas_interes.html')
