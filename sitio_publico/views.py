@@ -34,7 +34,7 @@ def contacto_view(request):
             try:
                 # 1) Enviar al laboratorio
                 resend.Emails.send({
-                    "from": "LaDoPro <ladopro.unlp@gmail.com>",
+                    "from": "LaDoPro <onboarding@resend.dev>",
                     "to": [
                         "ladopro.unlp@gmail.com",
                         "ladopro@fisica.unlp.edu.ar"
@@ -50,7 +50,7 @@ def contacto_view(request):
                 )
 
                 resend.Emails.send({
-                    "from": "LaDoPro <ladopro.unlp@gmail.com>",
+                    "from": "LaDoPro <onboarding@resend.dev>",
                     "to": cd["email"],
                     "subject": "Gracias por tu consulta - LaDoPro",
                     "html": html_content
