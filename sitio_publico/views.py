@@ -35,7 +35,7 @@ def contacto_view(request):
             datos_ladopro = {
                 "sender": {
                     "name": "LaDoPro Web",
-                    "email": "ladopro@brevo.com"        # REMITE DESDE BREVO
+                    "email": "ladopro.unlp@gmail.com"        # REMITE DESDE BREVO
                 },
                 "to": [
                     {"email": "ladopro.unlp@gmail.com"},
@@ -49,7 +49,7 @@ def contacto_view(request):
             datos_usuario = {
                 "sender": {
                     "name": "LaDoPro Web",
-                    "email": "ladopro@brevo.com"
+                    "email": "ladopro.unlp@gmail.com"
                 },
                 "to": [{"email": cd["email"]}],
                 "subject": "Gracias por tu consulta - LaDoPro",
