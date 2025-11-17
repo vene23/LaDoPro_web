@@ -56,19 +56,12 @@ def contacto_view(request):
                 "htmlContent": html_usuario
             }
             
-            print("BREVO_API_KEY:", settings.BREVO_API_KEY)
-
             # --- Enviar vía API ---
             try:
                 headers = {
                     "api-key": settings.BREVO_API_KEY,
                     "Content-Type": "application/json"
                 }
-
-                # 🔥 DEBUG TEMPORAL
-                print("DEBUG → datos_ladopro:", datos_ladopro)
-                print("DEBUG → datos_usuario:", datos_usuario)
-                print("DEBUG → email usuario:", cd["email"])
 
                 # 1) Mail al laboratorio
                 requests.post(
