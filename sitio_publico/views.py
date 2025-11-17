@@ -1,9 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ContactoForm
-from django.core.mail import EmailMessage
-from email.mime.image import MIMEImage  # para embebido
 import os
-import resend
 from django.conf import settings
 from django.template.loader import render_to_string
 import requests
@@ -26,51 +23,77 @@ def contacto_view(request):
         if form.is_valid():
             cd = form.cleaned_data
             asunto = cd.get('asunto') or 'Consulta desde web'
-            cuerpo = f"Nombre: {cd['nombre']}\nEmail: {cd['email']}\n\nMensaje:\n{cd['mensaje']}"
+            cuerpo_ladopro = f"Nombre: {cd['nombre']}\nEmail: {cd['email']}\n\nMensaje:\n{cd['mensaje']}"
 
-            import resend
-            resend.api_key = settings.RESEND_API_KEY
+            # --- HTML para usuario ---
+            html_usuario = render_to_string(
+                "emails/confirmacion_contacto.html",
+                {"nombre": cd["nombre"]}
+            )
 
+            # 1) Enviar al laboratorio
+            datos_ladopro = {
+                "sender": {
+                    "name": "LaDoPro Web",
+                    "email": "ladopro@brevo.com"        # REMITE DESDE BREVO
+                },
+                "to": [
+                    {"email": "ladopro.unlp@gmail.com"},
+                    {"email": "ladopro@fisica.unlp.edu.ar"}
+                ],                
+                "subject": asunto,
+                "textContent": cuerpo_ladopro
+            }
+
+            # --- 2) enviar confirmación al usuario ---
+            datos_usuario = {
+                "sender": {
+                    "name": "LaDoPro Web",
+                    "email": "ladopro@brevo.com"
+                },
+                "to": [{"email": cd["email"]}],
+                "subject": "Gracias por tu consulta - LaDoPro",
+                "htmlContent": html_usuario
+            }
+
+            # --- Enviar vía API ---
             try:
-                # 1) Enviar al laboratorio
-                resend.Emails.send({
-                    "from": "LaDoPro <onboarding@resend.dev>",
-                    "to": [
-                        "ladopro.unlp@gmail.com",
-                        "ladopro@fisica.unlp.edu.ar"
-                    ],
-                    "subject": asunto,
-                    "text": cuerpo
-                })
+                headers = {
+                    "api-key": settings.BREVO_API_KEY,
+                    "Content-Type": "application/json"
+                }
 
-                # 2) Confirmación al usuario
-                html_content = render_to_string(
-                    "emails/confirmacion_contacto.html",
-                    {'nombre': cd['nombre']}
+                # 1) Mail al laboratorio
+                requests.post(
+                    "https://api.brevo.com/v3/smtp/email",
+                    json=datos_ladopro,
+                    headers=headers,
+                    timeout=10
                 )
 
-                resend.Emails.send({
-                    "from": "LaDoPro <onboarding@resend.dev>",
-                    "to": cd["email"],
-                    "subject": "Gracias por tu consulta - LaDoPro",
-                    "html": html_content
-                })
+                # 2) Mail al usuario
+                requests.post(
+                    "https://api.brevo.com/v3/smtp/email",
+                    json=datos_usuario,
+                    headers=headers,
+                    timeout=10
+                )
 
                 mensaje_servidor = "¡Consulta enviada correctamente!"
                 form = ContactoForm()
 
             except Exception as e:
-                print("Error Resend:", e)
+                print("Error Brevo:", e)
                 mensaje_servidor = "Error al enviar. Intenta luego."
 
     else:
         form = ContactoForm()
 
-    return render(request, 'public/contacto.html', {
-        'form': form,
-        'mensaje_servidor': mensaje_servidor
-    })
-
+    return render(
+        request,
+        "public/contacto.html",
+        {"form": form, "mensaje_servidor": mensaje_servidor}
+    )
         
 def notas_interes(request):
     return render(request, 'public/notas_interes.html')

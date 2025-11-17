@@ -149,7 +149,7 @@ LOGIN_URL = '/login/'  # Ruta a la vista de inicio de sesión
 LOGIN_REDIRECT_URL = '/inventario/dashboard/'
 
 # Configuración de correo real
-RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+BREVO_API_KEY = os.getenv("BREVO_API_KEY")
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "LaDoPro <ladopro.unlp@gmail.com>"
