@@ -36,6 +36,12 @@ header p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+#sobre_laboratorio p {
+    line-height: 1.6;         /* buena legibilidad */
+    text-align: justify;      /* ← aquí se justifica el texto */
+  text-justify: inter-word; /* distribuye mejor los espacios */
+}
+
 #sobre_laboratorio h2 {
     font-size: 1.6em;
     margin-bottom: 10px;
@@ -126,13 +132,22 @@ header p {
   font-weight: bold;
 }
 
+#vision {
+  max-width: 800px;                /* mismo ancho que sobre_laboratorio */
+  margin: 15px auto;               /* centrado con espacio arriba/abajo */
+  background: #fff;                 /* fondo blanco */
+  padding: 20px;                    /* espacio interno */
+  border-radius: 10px;              /* esquinas redondeadas */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* sombra igual */
+}
+
 #vision p {
   margin-bottom: 10px;
   font-size: 1.01em;
   line-height: 1.6;
-  text-align: center;
+  text-align: justify;
+  text-justify: inter-word; /* mejora la distribución de espacios */
   padding: 10px 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Sección "Nuestro Staff" */
