@@ -55,6 +55,8 @@ def contacto_view(request):
                 "subject": "Gracias por tu consulta - LaDoPro",
                 "htmlContent": html_usuario
             }
+            
+            print("BREVO_API_KEY:", settings.BREVO_API_KEY)
 
             # --- Enviar vía API ---
             try:
