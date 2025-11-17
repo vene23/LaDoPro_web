@@ -65,6 +65,11 @@ def contacto_view(request):
                     "Content-Type": "application/json"
                 }
 
+                # 🔥 DEBUG TEMPORAL
+                print("DEBUG → datos_ladopro:", datos_ladopro)
+                print("DEBUG → datos_usuario:", datos_usuario)
+                print("DEBUG → email usuario:", cd["email"])
+
                 # 1) Mail al laboratorio
                 requests.post(
                     "https://api.brevo.com/v3/smtp/email",
