@@ -121,12 +121,21 @@
   cursor: pointer;
 }
 .bloque-info {
-  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
+
 .bloque-info strong {
   display: block;
   margin-bottom: 5px;
   color: #1c3d7a;
+}
+.bloque-info p {
+    font-size: 1.15em;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 12px;
 }
 
 @keyframes fadeIn {
@@ -305,4 +314,24 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+.bloque-info .frase-destacada {
+    font-style: italic;
+    background-color: rgba(0,0,0,0.03);
+    padding: 10px;
+    border-left: 4px solid #0077cc;
+    margin-top: 15px;
+}
+.imagenes-divulgacion {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;      /* centrar */
+    gap: 15px;
+    margin-top: 20px;
+}
+.imagenes-divulgacion img {
+    width: 100%;
+    max-width: 400px; /* un poco más grande, para ue se vea mejor */
+    border-radius: 9px;
 }
