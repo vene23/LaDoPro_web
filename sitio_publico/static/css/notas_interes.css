@@ -48,6 +48,44 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: transform 0.6s ease;
+  position: relative;
+}
+
+.badge-nuevo {
+    background: #ff4d4d;
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.link-principal {
+  margin-bottom: 10px;
+}
+
+.link-principal a {
+  color: #1c3d7a;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.boton-secundario {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: 2px solid #1c3d7a;
+  border-radius: 6px;
+  color: #1c3d7a;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.boton-secundario:hover {
+  background-color: #1c3d7a;
+  color: white;
 }
 
 .nota-card:hover {

@@ -67,6 +67,10 @@
     </div>        
     <div class="anio" id="anio-Divulgacion">
         <div class="tarjeta">
+        <h3>Accidente de Chernobyl: Charla abierta con la Dra. Laura Damonte</h3>
+        <button class="ver-mas" data-modal="modal13">Ver más</button>
+        </div>
+        <div class="tarjeta">
         <h3>Día de la Protección Radiológica en América Latina y El Caribe</h3>
         <button class="ver-mas" data-modal="modal12">Ver más</button>
         </div>
@@ -320,6 +324,33 @@
 
     </div>
 </div>
+<div class="modal" id="modal13">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+
+        <h3>40 años del accidente de Chernobyl</h3>
+
+        <div class="bloque-info">
+            <p>
+                En el marco de los 40 años del accidente de Chernobyl, la Dra. Laura Damonte participó como disertante en una charla abierta orientada a la divulgación y concientización sobre el uso de radiaciones ionizantes, sus beneficios en la medicina moderna y las lecciones aprendidas sobre el manejo del riesgo.
+            </p>
+        </div>
+
+        <!-- IMÁGENES -->
+        <div class="imagenes-divulgacion">
+            <img src="{% static 'image/chernobyl1.jpg' %}" loading="lazy" alt="Charla sobre Chernobyl con la Dra. Laura Damonte">
+            <img src="{% static 'image/chernobyl2.jpg' %}" loading="lazy" alt="Espacio artístico infantil con dibujos para colorear durante la actividad sobre Chernobyl">
+            <img src="{% static 'image/chernobyl3.jpg' %}" loading="lazy" alt="participantes de la comunidad que asistieron a la Charla sobre Chernobyl">
+        </div>
+
+        <!-- PDF -->
+        <div class="bloque-info">
+            <a href="{% static 'pdf/cronograma_chernobyl.pdf' %}" target="_blank" class="boton-info">
+                👉 Ver cronograma completo
+            </a>
+        </div>
+    </div>
+</div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const carruseles = [];
@@ -422,6 +453,31 @@ document.querySelectorAll('.ver-mas').forEach(btn => {
             }
         });
     });
+
+    // 👉 Activar sección según hash en la URL
+const hash = window.location.hash;
+
+if (hash) {
+    const targetId = hash.replace('#anio-', '');
+
+    // Activar menú
+    document.querySelectorAll('.menu-anios li').forEach(li => {
+        li.classList.remove('activo');
+        if (li.getAttribute('data-anio') === targetId) {
+            li.classList.add('activo');
+        }
+    });
+
+    // Activar contenido
+    document.querySelectorAll('.anio').forEach(div => {
+        div.classList.remove('activo');
+    });
+
+    const targetDiv = document.getElementById('anio-' + targetId);
+    if (targetDiv) {
+        targetDiv.classList.add('activo');
+    }
+}
 });
 </script>
 
