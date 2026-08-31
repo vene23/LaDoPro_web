@@ -9,10 +9,56 @@
 
 {% block content %}
 <section class="notas">
+<div class="intro-notas">
 <h2>Notas de Interés</h2>
-<p>En esta sección compartimos artículos, investigaciones y recursos relevantes sobre protección radiológica, calidad en equipamiento médico y avances en física médica.</p>
+<P>En esta sección compartimos novedades, actividades científicas y recursos vinculados con la física médica y la protección radiológica.</P>
+</div>
 
 <div class="notas-contenido">
+<section class="evento-congreso">
+    <div class="evento-congreso-contenido">
+        <div class="evento-congreso-texto">
+            <h3>15º CONGRESO ARGENTINO DE FÍSICA MÉDICA | 1ª Jornada Nacional de Dosimetría.</h3>
+            <p>La Sociedad Argentina de Física Médica invita a participar de este encuentro científico y profesional.</p>
+        <div class="evento-congreso-imagen">
+            <img src="{% static 'image/26safim.jpg' %}" 
+            alt="15º Congreso Argentino de Física Médica">
+        </div>
+        <a href="https://congresosafim.com.ar/inscripciones/"
+        target="_blank"
+        class="boton-ext">
+        🌐 Sitio oficial del Congreso: Más información e inscripciones
+        </a>    
+    </div>
+
+    <div class="evento-congreso-video">
+        <iframe src="https://drive.google.com/file/d/12fTBu6SgBHNmIpr6wvsL3_9mk-UGvWOP/preview"
+        height="400"
+        allow="autoplay"
+        allowfullscreen>
+        </iframe>
+    </div>
+
+    
+        <div class="precongreso-texto">
+            <h3>Cursos Pre-Congreso</h3>
+            <p>En el marco del 15º Congreso Argentino de Física Médica se desarrollarán talleres y actividades.</p>
+            
+            <a href="https://congresosafim.com.ar/cursos-pre-congreso/"
+            target="_blank"
+            class="boton-ext">
+            🌐 Ver cursos pre Congreso
+            </a>
+        </div>
+
+        <div class="precongreso-video">
+            <iframe src="https://drive.google.com/file/d/1vsu4uHItcFbl6TvhinGMX4-yUF-ATgeL/preview" 
+            allow="autoplay"
+            allowfullscreen>
+            </iframe>
+        </div>
+</div>
+</section>
 <div class="notas-grid">
     <div class="nota-card nueva">
     <span class="badge-nuevo">Nuevo</span>

@@ -9,13 +9,13 @@ body {
 .notas {
   max-width: 1000px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 15px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-.notas h2 {
+.intro-notas h2 {
   text-align: center;
   font-size: 2em;
   margin-bottom: 10px;
@@ -23,10 +23,23 @@ body {
   color: #1c3d7a;
 }
 
-.notas p {
+.intro-notas {
+  background-color: #f7f9fc;   
+  padding: 8px 12px;          
+  border-left: 3px solid #1c3d7a;
+  font-size: 1.0em;
+  color: #333333;
+  margin-bottom: 15px;   
+    display: flex;              /* activa flexbox */
+  justify-content: space-between; /* título a la izquierda, texto a la derecha */
+  align-items: center;
+  gap: 15px;
+}
+
+.intro-notas p {
+  margin: 0;
   text-align: center;
-  font-size: 1.1em;
-  margin-bottom: 30px;
+  padding-top: 4px;
 }
 
 .notas-contenido {
@@ -139,4 +152,138 @@ body {
   font-size: 1em;
   margin-bottom: 30px;
   color: #555;
+}
+/* == Congreso SAFIM 2026== */
+
+.evento-congreso {
+    margin: 10px 0 40px 0;
+    padding: 25px;
+    background-color: #eef3fb;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.evento-congreso-contenido {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.evento-congreso-imagen img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.evento-congreso-texto h3 {
+    color: #1c3d7a;
+    margin-top: 0;
+}
+
+.evento-congreso-texto p {
+    text-align: left;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.boton-ext {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: 2px solid #1c3d7a;
+  border-radius: 6px;
+  color: #1c3d7a;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.boton-ext:hover {
+  background-color: #1c3d7a;
+  color: white;
+}
+
+.evento-congreso-video {
+  display: grid;
+  place-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.evento-congreso-video h3 {
+    color: #1c3d7a;
+    text-align: center;
+}
+
+.evento-congreso-video iframe {
+    width: 360px;
+    max-width: 100%;  
+    aspect-ratio: 9 / 16;
+    height: auto;
+    max-height: 500px;
+    border: none;
+    border-radius: 10px;
+}
+
+@media(max-width:700px){
+
+    .evento-congreso-contenido {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:700px){
+  .evento-congreso-video iframe {
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+  }
+}
+
+.precongreso {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.precongreso-video {
+  display: grid;
+  place-items: center;
+}
+.precongreso-video iframe {
+    width: 60%;
+    aspect-ratio: 9 / 16;
+    height: auto;
+    max-height: 500px;
+    border: none;
+    border-radius: 10px;
+}
+
+.precongreso-texto h3 {
+    color: #1d4591;
+}
+
+.precongreso-texto p {
+    text-align: left;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+@media(max-width:700px){
+
+    .evento-precongreso {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width:700px){
+  .precongreso-video iframe {
+    width: 100%;       
+    height: 400px; 
+    max-height: 400px;  
+  }
 }
