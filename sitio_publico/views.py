@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 import requests
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-
+# trigger railway deploy
 def inicio(request):
     return render(request, 'public/index.html')
 def quienes_somos(request):
