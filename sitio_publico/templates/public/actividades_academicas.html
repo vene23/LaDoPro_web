@@ -67,6 +67,10 @@
     </div>        
     <div class="anio" id="anio-Divulgacion">
         <div class="tarjeta">
+        <h3>Día de la Física Médica 2026</h3>
+        <button class="ver-mas" data-modal="modal14">Ver más</button>
+        </div>
+        <div class="tarjeta">
         <h3>Accidente de Chernobyl: Charla abierta con la Dra. Laura Damonte</h3>
         <button class="ver-mas" data-modal="modal13">Ver más</button>
         </div>
@@ -75,7 +79,7 @@
         <button class="ver-mas" data-modal="modal12">Ver más</button>
         </div>
         <div class="tarjeta">
-        <h3>Día de la Física Médica</h3>
+        <h3>Día de la Física Médica 2025</h3>
         <button class="ver-mas" data-modal="modal10">Ver más</button>
         </div>
         <div class="tarjeta">
@@ -350,6 +354,67 @@
             </a>
         </div>
     </div>
+</div>
+<!-- Día Internacional de la Física Médica 2026 -->
+<div class="modal" id="modal14">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+
+        <h3>Día Internacional de la Física Médica 2026</h3>
+
+        <div class="bloque-info">
+            <p>
+                Cada 7 de noviembre celebramos el Día Internacional de la Física Médica, una fecha que conmemora el nacimiento de Marie Skłodowska-Curie y reconoce el aporte de la Física Médica a la salud.
+            </p>
+            <p>
+                En 2026, la celebración propone como tema central:
+                <strong>«Promoviendo la equidad en la salud global: el fundamento ético de la física médica».</strong>
+            </p>
+            <p>
+                Esta consigna destaca el compromiso de nuestra disciplina con la calidad y seguridad de las tecnologías médicas, la formación de profesionales y la colaboración multidisciplinaria para mejorar la atención de los pacientes.
+            </p>
+            <p>Para conmemorar este día, los invitamos este sábado 7 de noviembre,
+            de 15:30 a 16:30 h, a conectarse a la transmisión en vivo,
+            donde participaremos de una breve charla sobre Física Médica.
+            </p>
+        </div>
+
+<!-- ENLACES DE TRANSMISIÓN Y DOCUMENTO COMPLETO -->
+<div class="bloque-info">
+
+    <h4>Seguí la charla en vivo</h4>
+    <p>
+        <a href="https://youtube.com/@streaming.1882?si=v3VHKEsoZ8m-dtoo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="boton-info">
+            ▶ Transmisión por YouTube
+        </a>
+    </p>
+    <p>
+        <a href="https://www.instagram.com/yafuearrancamos?psln=MjRtb290eTY3cWRw"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="boton-info">
+            Ver canal de Instagram
+        </a>
+    </p>
+
+    <p>
+        <a href="{% static 'pdf/dia_internacional_fm_2026.pdf' %}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="boton-info">
+            👉 Leer texto completo de la celebración
+        </a>
+    </p>
+
+        <!-- PÓSTER OFICIAL -->
+        <div class="imagenes-divulgacion">
+            <img src="{% static 'image/poster_fm_2026.jpg' %}"
+                loading="lazy"
+                alt="Póster oficial del Día Internacional de la Física Médica 2026">
+        </div>
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {

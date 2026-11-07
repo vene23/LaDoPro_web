@@ -287,3 +287,71 @@ body {
     max-height: 400px;  
   }
 }
+
+
+/* Día Internacional de la Física Médica 2026 */
+
+.nota-destacada-fm {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 28px;
+    margin-bottom: 30px;
+    background: #fff;
+    border: 1px solid #dce3ed;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+    
+.nota-destacada-fm h3 {
+    color: #1c3d7a;
+    margin: 10px 0 22px;
+}
+
+.nota-fm-contenido {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: flex;
+    gap: 28px;
+}
+
+.nota-fm-contenido img {
+    width: 210px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.nota-fm-texto {
+    flex: 1;
+}
+
+.nota-fm-texto p {
+    line-height: 1.65;
+    margin-bottom: 15px;
+}
+
+.nota-fm-texto a {
+    display: inline-block;
+    margin: 5px 8px 5px 0;
+}
+
+@media (max-width: 700px) {
+    .nota-destacada-fm {
+        padding: 18px;
+    }
+
+    .nota-fm-contenido {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nota-fm-contenido img {
+        width: 65%;
+        max-width: 230px;
+    }
+
+    .nota-fm-texto {
+        width: 100%;
+    }
+}
